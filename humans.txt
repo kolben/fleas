@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jonas Kolben
+    jonas dot kolben gmail, skype
+    Höör, Sweden & Lamu, Kenya
+
+# THANKS
+
+    Facebook Groups acting as Flea Markets in southern Sweden
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr, FB Graph API
+    jQuery.cookie, jQuery.equalizer

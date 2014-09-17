@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Mina Loppmarknadsgrupper</title>
+        <meta name="description" content="Visa poster i dina loppisgrupper på Facebook organiserat och överskådligt.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="fb-root"></div>
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title">Mina Loppisgrupper</h1>
+                <nav>
+                    <ul>
+                        <li><a id="edit-groups" href="#edit-groups">Grupper</a></li>
+                        <li><a id="view-categories" href="#view-categories">Kategorier</a></li>
+                        <li><a id="view-locations" href="#view-locations">Platser</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="main-container">
+            <div id="main" class="main wrapper clearfix">
+                <article id="article">
+                    <header>
+                        <h1 id="article-header">Mina Loppisgrupper</h1>
+                    </header>
+                    <section>
+                        <p>Ett enklare sätt att hålla koll på dina Facebook-grupper som egentligen är en loppis.</p>
+                    </section>
+                </article>
+                
+                <article id="article-edit-groups" class="hidden">
+                    <header>
+                        <h1>Välj grupper</h1>
+                        <p>Välj vilka av dina grupper som är loppisgrupper.</p>
+                    </header>
+                    <section>
+                            <ul id="edit-groups-list" class="checkbox-list">
+                            </ul>
+                    </section>
+                    <section>
+                        <button id="edit-groups-cancel">Avbryt</button>
+                        <button id="edit-groups-save">Spara</button>
+                    </section>
+                    
+                    
+                </article>
+                
+                <article id="article-view-categories" class="hidden">
+                    <header>
+                        <h1>Kategorier</h1>
+                        <p>Inlägg sorteras i kategorier med hjälp av nyckelord.</p>
+                    </header>
+                    
+                </article>
+                
+                <article id="article-view-locations" class="hidden">
+                    <header>
+                        <h1>Platser</h1>
+                        <p>Inlägg sorteras efter platser med hjälp av nyckelord.</p>
+                    </header>
+                    
+                </article>
+
+                <aside>
+                    <h3 id="fb-login">Logga in</h3>
+                    <p id="fb-login-info">Du måste logga in på Facebook för att kunna se dina grupper.</p>
+                    <p><a id="fb-login-btn" href="#fb-login">Logga in med Facebook</a></p>
+                    
+                    <p id="categories"></p>
+                    <p id="locations"></p>
+                </aside>
+
+            </div> <!-- #main -->
+            
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3>Mina Loppisgrupper</h3>
+            </footer>
+        </div>
+        
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
