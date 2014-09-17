@@ -9,7 +9,7 @@ var fleas = (function ($) {
                 id: 8,
                 name: "Barnvagnar/ -stolar/ -saker",
                 categories: [],
-                tags: ["sulky", "barnvagn", "sittdel", "liggdel", "babyskydd", "bilstol", "åkpåse", "bärsele", "amningspump", "bröstpump", "haklapp", "babybjörn", "babywatch", "babysense"]
+                tags: ["spjälskydd", "gravidbälte", "babygunga", "sulky", "barnvagn", "sittdel", "liggdel", "babyskydd", "bilstol", "åkpåse", "bärsele", "amningspump", "bröstpump", "haklapp", "babybjörn", "babywatch", "babysense"]
             },
             {
                 id: 10,
@@ -21,19 +21,19 @@ var fleas = (function ($) {
                 id: 7,
                 name: "Fordon",
                 categories: [],
-                tags: ["husvagn", "däck", "volvo", "saab", "cykel", "fälj", "fälg"]
+                tags: ["moped", "minicross", "husvagn", "däck", "volvo", "saab", "cykel", "fälj", "fälg"]
             },
             {
                 id: 15,
                 name: "Elektronik",
                 categories: [],
-                tags: ["talpenna", "microvågsugn", "dammsugar", "laddare", "laptop", "data", "klocka", "fläkt", "platttv", "hdmi", "locktång", "hörlurar", "iphone", "lcd", "dator", "android", "nintendo", "xbox", "ps3", "kamera", "kylskåp", "frys", "tvättmaskin", "mikrovågsugn", "elgitarr", "fotbad"]
+                tags: ["grästrimmer", "kaffebryggare", "dvd", "cd-spelare", "talpenna", "microvågsugn", "dammsugar", "laddare", "laptop", "data", "klocka", "fläkt", "platttv", "hdmi", "locktång", "hörlurar", "iphone", "lcd", "dator", "android", "nintendo", "xbox", "ps3", "kamera", "kylskåp", "frys", "tvättmaskin", "mikrovågsugn", "elgitarr", "fotbad"]
             },
             {
                 id: 12,
                 name: "Heminredning",
                 categories: [],
-                tags: ["korg", "spegel", "trådbackar", "klädställning", "klädsel", "dyna", "gardin", "staty", "löpare", "skylt", "tvättkorg", "påslakan", "kudde", "kuddar", "hängare", "ljusfat", "belysning", "kristallkrona", "gardinstång", "gardinstänger", "discokula", "matta", "mattor", "lykta", "lyktor", "lampa", "lampor", "ramar", "tavla", "tavlor", "gardiner", "toalettsits", "toasits", "ljusstake", "ljusstakar"]
+                tags: ["spotlights", "trådback", "korg", "spegel", "trådbackar", "klädställning", "klädsel", "dyna", "gardin", "staty", "löpare", "skylt", "tvättkorg", "påslakan", "kudde", "kuddar", "hängare", "ljusfat", "belysning", "kristallkrona", "gardinstång", "gardinstänger", "discokula", "matta", "mattor", "lykta", "lyktor", "hyllor", "lampa", "lampor", "ramar", "tavla", "tavlor", "gardiner", "toalettsits", "toasits", "ljusstake", "ljushållare", "ljusstakar"]
             },
             {
                 id: 1,
@@ -54,13 +54,13 @@ var fleas = (function ($) {
                         tags: []
                     }
                 ],
-                tags: ["hoody", "blazer", "onepiece", "leggings", "tshirt", "cape", "jeggings", "baddräkt", "klädpaket", "tubtop", "bikini", "plagg", "t-shirt", "t-tröja", "pyjamas", "linne", "väst", "kavaj", "tights", "kjol", "shorts", "body", "chinos", "kläder", "kofta", "rock", "topp", "mössa", "mössor", "vantar", "dress", "blus", "skjorta", "skjortor", "tröja", "tröjor", "jeans", "byxa", "byxor", "klänning", "tunika", "tunikor", "klänningar", "kappa", "kappor", "jacka", "jackor", "fleece", "overall"]
+                tags: ["trenchcoat", "regnställ", "hoody", "blazer", "onepiece", "leggings", "tshirt", "cape", "jeggings", "baddräkt", "klädpaket", "tubtop", "bikini", "plagg", "t-shirt", "t-tröja", "pyjamas", "linne", "väst", "kavaj", "tights", "kjol", "shorts", "body", "chinos", "kläder", "kofta", "rock", "topp", "mössa", "mössor", "vantar", "dress", "blus", "skjorta", "skjortor", "tröja", "tröjor", "jeans", "byxa", "byxor", "klänning", "tunika", "tunikor", "klänningar", "kappa", "kappor", "jacka", "jackor", "fleece", "overall"]
             },
             {
                 id: 13,
                 name: "Leksaker",
                 categories: [],
-                tags: ["racket", "hurts", "nalle", "skallror", "skallra", "lekborg", "hopphäst", "gunghäst", "bollar", "kulor", "drake", "sandlåda", "lekplats", "klossar", "docka", "dockor", "dinosaurier", "dinosaurie", "leksaksridhäst", "lego", "duplo", "dockvagn", "ritsaker", "kritor", "babysitter", "babygym", "pussel", "puzzel", "bondgård", "slott", "leksak", "nallar"]
+                tags: ["trehjuling", "dockhus", "barbie", "barbapappa", "barbapapa", "racket", "hurts", "nalle", "skallror", "skallra", "lekborg", "hopphäst", "gunghäst", "bollar", "kulor", "drake", "sandlåda", "lekplats", "klossar", "docka", "dockor", "dinosaurier", "dinosaurie", "leksaksridhäst", "lego", "duplo", "dockvagn", "ritsaker", "kritor", "babysitter", "babygym", "pussel", "puzzel", "bondgård", "slott", "leksak", "nallar"]
             },
             {
                 id: 6,
@@ -84,16 +84,12 @@ var fleas = (function ($) {
                 id: 14,
                 name: "Smycken, Smink & Väskor",
                 categories: [],
-                tags: ["tungpiercing", "navelpiercing", "diadem", "portmonä", "portmonnä", "börs", "plånbok", "nagelklippare", "tippar", "armband", "halsband", "smycke", "örhänge", "smink", "parfym", "fotcream", "fotgele", "väska", "nessesär", "nessecär", "neccesär", "ryggsäck"]
+                tags: ["öronhänge", "örhänge", "tungpiercing", "navelpiercing", "diadem", "portmonä", "portmonnä", "börs", "plånbok", "nagelklippare", "tippar", "armband", "halsband", "smycke", "örhänge", "smink", "parfym", "fotcream", "fotgele", "väska", "nessesär", "nessecär", "neccesär", "ryggsäck"]
             },
             {
                 id: 888,
                 name: "Sökes",
                 tags: ["söker", "sökes", "köper", "köpes", "letar"]
-            },
-            {
-                id: 999,
-                name: "Okategoriserat"
             }
         ],
         _locations = [
@@ -228,10 +224,6 @@ var fleas = (function ($) {
                 id: 10,
                 name: "Malmö",
                 tags: ["malmö"]
-            },
-            {
-                id: 999,
-                name: "Okänt"
             }
         ],
         _users = {},
@@ -539,6 +531,10 @@ var fleas = (function ($) {
             objects.sort(function (a, b) {
                     return 1 * ((a.name > b.name) - (b.name > a.name));
                 });
+            objects.push({
+                id: 1000,
+                name: "Okänt"
+            });
             for (var i = 0; i < objects.length; i++) {
                 var o = objects[i];
                 o.posts = [];
