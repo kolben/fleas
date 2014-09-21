@@ -681,7 +681,7 @@ $(document).ready(function () {
 
     window.fbAsyncInit = function () {
         FB.init({
-            appId: window.location.host == "localhost"? '272728566269664' : '272724449603409',
+            appId: window.location.host === "localhost"? '272728566269664' : '272724449603409',
             xfbml: false,
             status: true,
             cookie: true,
