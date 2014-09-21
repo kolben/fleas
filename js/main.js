@@ -227,6 +227,7 @@ var fleas = (function ($) {
             }
         ],
         _users = {},
+        _dates = {},
         getItemById = function (id, items) {
             for (var i = 0; i < items.length; i++) {
                 if (items[i].id === id) {
@@ -239,6 +240,8 @@ var fleas = (function ($) {
             return _groups;
         },
         indexPost = function (post) {
+            var createdDate;
+            
             if (post.message) {
                 indexPostByItems(post, _categories, "categories");
                 indexPostByItems(post, _locations, "locations");
@@ -250,6 +253,18 @@ var fleas = (function ($) {
                         posts: [post.id],
                         name: post.from.name
                     };
+                }
+                if(post.created_time){
+                    createdDate = post.created_time.split("T")[0];
+                    post.created_date = createdDate;
+                    if (_dates[createdDate]) {
+                        _dates[createdDate].posts.push(post.id);
+                    }
+                    else {
+                        _dates[createdDate] = {
+                            posts: [post.id]
+                        };
+                    }
                 }
             }
             else {
@@ -329,7 +344,10 @@ var fleas = (function ($) {
         handleFeedResponse = function (response) {
             console.log("fleas.handleFeedResponse", response);
             var j = 0,
-                post;
+                post,
+                today = (new Date()).toISOString().split("T")[0],
+                yesterday = (new Date((new Date().getTime()) - 86400000)).toISOString().split("T")[0],
+                ul;
             if (response && response.data) {
                 for (; j < response.data.length; j++) {
                     post = response.data[j];
@@ -349,16 +367,59 @@ var fleas = (function ($) {
                 }
                 else {
                     $("#fb-login").text(Object.keys(_posts).length + " inlägg i " + _groups.length + " grupper");
+                    ul = $("<ul />");
+                    if(_dates[today].posts.length){             
+                        ul.append(
+                            $("<li>")
+                                .append(
+                                    $("<a>", { 
+                                        href: "#today", 
+                                        text: "Publicerade idag (" + _dates[today].posts.length + ")"
+                                    })
+                                    .on("click", function (evt) {
+                                        evt.preventDefault();
+                                        renderItem({
+                                            posts: _dates[today].posts,
+                                            name: $(this).text()
+                                        });
+                                    })
+                                )
+                        )
+                    }
+                    if(_dates[yesterday].posts.length)
+                    {
+                        ul.append(
+                            $("<li>")
+                                .append(
+                                    $("<a>", { 
+                                        href: "#today", 
+                                        text: "Publicerade igår (" + _dates[yesterday].posts.length + ")"
+                                    })
+                                    .on("click", function (evt) {
+                                        evt.preventDefault();
+                                        renderItem({
+                                            posts: _dates[yesterday].posts,
+                                            name: $(this).text()
+                                        });
+                                    })
+                                )
+                        );
+                        
+                    }
+                    $("#dates").empty().append(ul);
                 }
             }
         },
         loadPosts = function () {
+            var i = 0,
+                groupId;
             showArticle("article");
             $("#fb-login-info").html("Laddar inlägg från " + _groups.length + " grupper.");
-            for (var i = 0; i < _groups.length; i++) {
-                var groupId = _groups[i];
+            for (; i < _groups.length; i++) {
+                groupId = _groups[i];
                 FB.api('/' + groupId + '/feed', handleFeedResponse, {'limit': _limitPosts});
             }
+            
 
         },
         selectGroups = function () {
@@ -472,8 +533,8 @@ var fleas = (function ($) {
                     var li = $("<li>")
                         .append(
                             $("<p />", {
-                                html: "<strong>" + post.created_time.split("+")[0].split("T")[0] + "</strong>"
-                                    + "<a id='fb-post-comments-" + post.id + "' data-fb-post-comments='" + post.id + "' href='#comments'>"
+                                html: "<strong>" + post.created_date + "</strong>"
+                                    + "<a class='fb-post-comments' id='fb-post-comments-" + post.id + "' data-fb-post-comments='" + post.id + "' href='#comments'>"
                                     + "(" + (post.comments && post.comments.data ? post.comments.data.length : "0") + ")"
                                     + "</a><br />"
                             })
@@ -547,8 +608,10 @@ var fleas = (function ($) {
         resetAll = function () {
             reset(_categories, "categories");
             reset(_locations, "locations");
+            _dates = {};
             _users = {};
             _posts = {};
+            
         },
         viewCategories = function () {
             viewItems(_categories, "article-view-categories", "categories");
@@ -618,7 +681,7 @@ $(document).ready(function () {
 
     window.fbAsyncInit = function () {
         FB.init({
-            appId: '272724449603409',
+            appId: window.location.host == "localhost"? '272728566269664' : '272724449603409',
             xfbml: false,
             status: true,
             cookie: true,
