@@ -1,6 +1,6 @@
 var fleas = (function ($) {
     var _debug = false,
-        _limitPosts = 50,
+        _limitPosts = 100,
         _maxPosts = 500,
         _groups = $.cookie('groups') ? $.cookie('groups').split(",") : [],
         _posts = {},
@@ -27,13 +27,13 @@ var fleas = (function ($) {
                 id: 15,
                 name: "Elektronik",
                 categories: [],
-                tags: ["grästrimmer", "kaffebryggare", "dvd", "cd-spelare", "talpenna", "microvågsugn", "dammsugar", "laddare", "laptop", "data", "klocka", "fläkt", "platttv", "hdmi", "locktång", "hörlurar", "iphone", "lcd", "dator", "android", "nintendo", "xbox", "ps3", "kamera", "kylskåp", "frys", "tvättmaskin", "mikrovågsugn", "elgitarr", "fotbad"]
+                tags: ["sodastream", "högtalare", "grästrimmer", "kaffebryggare", "dvd", "cd-spelare", "talpenna", "microvågsugn", "dammsugar", "laddare", "laptop", "data", "klocka", "fläkt", "platttv", "hdmi", "locktång", "hörlurar", "iphone", "lcd", "dator", "android", "nintendo", "xbox", "ps3", "kamera", "kylskåp", "frys", "tvättmaskin", "mikrovågsugn", "elgitarr", "fotbad"]
             },
             {
                 id: 12,
                 name: "Heminredning",
                 categories: [],
-                tags: ["spotlights", "trådback", "korg", "spegel", "trådbackar", "klädställning", "klädsel", "dyna", "gardin", "staty", "löpare", "skylt", "tvättkorg", "påslakan", "kudde", "kuddar", "hängare", "ljusfat", "belysning", "kristallkrona", "gardinstång", "gardinstänger", "discokula", "matta", "mattor", "lykta", "lyktor", "hyllor", "lampa", "lampor", "ramar", "tavla", "tavlor", "gardiner", "toalettsits", "toasits", "ljusstake", "ljushållare", "ljusstakar"]
+                tags: ["servettställ", "förvaringslåd", "spotlights", "trådback", "korg", "spegel", "trådbackar", "klädställning", "klädsel", "dyna", "gardin", "staty", "löpare", "skylt", "tvättkorg", "påslakan", "kudde", "kuddar", "hängare", "ljusfat", "belysning", "kristallkrona", "gardinstång", "gardinstänger", "discokula", "matta", "mattor", "lykta", "lyktor", "hyllor", "lampa", "lampor", "ramar", "tavla", "tavlor", "gardiner", "toalettsits", "toasits", "ljusstake", "ljushållare", "ljusstakar"]
             },
             {
                 id: 1,
@@ -54,13 +54,13 @@ var fleas = (function ($) {
                         tags: []
                     }
                 ],
-                tags: ["trenchcoat", "regnställ", "hoody", "blazer", "onepiece", "leggings", "tshirt", "cape", "jeggings", "baddräkt", "klädpaket", "tubtop", "bikini", "plagg", "t-shirt", "t-tröja", "pyjamas", "linne", "väst", "kavaj", "tights", "kjol", "shorts", "body", "chinos", "kläder", "kofta", "rock", "topp", "mössa", "mössor", "vantar", "dress", "blus", "skjorta", "skjortor", "tröja", "tröjor", "jeans", "byxa", "byxor", "klänning", "tunika", "tunikor", "klänningar", "kappa", "kappor", "jacka", "jackor", "fleece", "overall"]
+                tags: ["leggins", "jumper", "trenchcoat", "regnställ", "hoody", "blazer", "onepiece", "leggings", "tshirt", "cape", "jeggings", "baddräkt", "klädpaket", "tubtop", "bikini", "plagg", "t-shirt", "t-tröja", "pyjamas", "linne", "väst", "kavaj", "tights", "kjol", "shorts", "body", "chinos", "kläder", "kofta", "rock", "topp", "mössa", "mössor", "vantar", "dress", "blus", "skjorta", "skjortor", "tröja", "tröjor", "jeans", "byxa", "byxor", "klänning", "tunika", "tunikor", "klänningar", "kappa", "kappor", "jacka", "jackor", "fleece", "overall"]
             },
             {
                 id: 13,
                 name: "Leksaker",
                 categories: [],
-                tags: ["trehjuling", "dockhus", "barbie", "barbapappa", "barbapapa", "racket", "hurts", "nalle", "skallror", "skallra", "lekborg", "hopphäst", "gunghäst", "bollar", "kulor", "drake", "sandlåda", "lekplats", "klossar", "docka", "dockor", "dinosaurier", "dinosaurie", "leksaksridhäst", "lego", "duplo", "dockvagn", "ritsaker", "kritor", "babysitter", "babygym", "pussel", "puzzel", "bondgård", "slott", "leksak", "nallar"]
+                tags: ["micki", "pony", "spargris", "trehjuling", "dockhus", "barbie", "barbapappa", "barbapapa", "racket", "hurts", "nalle", "skallror", "skallra", "lekborg", "hopphäst", "gunghäst", "bollar", "kulor", "drake", "sandlåda", "lekplats", "klossar", "docka", "dockor", "dinosaurier", "dinosaurie", "leksaksridhäst", "lego", "duplo", "dockvagn", "ritsaker", "kritor", "babysitter", "babygym", "pussel", "puzzel", "bondgård", "slott", "leksak", "nallar"]
             },
             {
                 id: 6,
@@ -78,7 +78,7 @@ var fleas = (function ($) {
                 id: 5,
                 name: "Skor",
                 categories: [],
-                tags: ["sandal", "ballerina", "sko", "stövel", "converse", "stövlar", "stövlette", "platådojor", "kängor", "pumps", "känga", "sneaker"]
+                tags: ["boots", "sandal", "ballerina", "sko", "stövel", "converse", "stövlar", "stövlette", "platådojor", "kängor", "pumps", "känga", "sneaker"]
             },
             {
                 id: 14,
@@ -240,6 +240,7 @@ var fleas = (function ($) {
             return _groups;
         },
         indexPost = function (post) {
+            console.log("fleas.indexPost", post);
             var createdDate;
             
             if (post.message) {
@@ -330,7 +331,6 @@ var fleas = (function ($) {
                     selectGroups();
                 }
                 else {
-                    $("#fb-login").text("Laddar inlägg");
                     loadPosts();
                 }
             }
@@ -409,12 +409,15 @@ var fleas = (function ($) {
                     $("#dates").empty().append(ul);
                 }
             }
+            else{
+                console.error("fleas.handleFeedResponse: No data in response", response);
+            }
         },
         loadPosts = function () {
             var i = 0,
                 groupId;
             showArticle("article");
-            $("#fb-login-info").html("Laddar inlägg från " + _groups.length + " grupper.");
+            $("#fb-login").html("Laddar inlägg från " + _groups.length + " grupper.");
             for (; i < _groups.length; i++) {
                 groupId = _groups[i];
                 FB.api('/' + groupId + '/feed', handleFeedResponse, {'limit': _limitPosts});
