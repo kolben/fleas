@@ -384,7 +384,7 @@ var fleas = (function ($) {
                                         });
                                     })
                                 )
-                        )
+                        );
                     }
                     if(_dates[yesterday].posts.length)
                     {
