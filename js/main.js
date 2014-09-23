@@ -380,7 +380,7 @@ var fleas = (function ($) {
                                         evt.preventDefault();
                                         renderItem({
                                             posts: _dates[today].posts,
-                                            name: $(this).text()
+                                            name: "Publicerade idag"
                                         });
                                     })
                                 )
@@ -399,7 +399,7 @@ var fleas = (function ($) {
                                         evt.preventDefault();
                                         renderItem({
                                             posts: _dates[yesterday].posts,
-                                            name: $(this).text()
+                                            name: "Publicerade igår"
                                         });
                                     })
                                 )
@@ -563,8 +563,11 @@ var fleas = (function ($) {
                     ul.append(
                         li
                         .append(
-                            $("<p />", {text: post.message})
+                            $("<p />", { 
+                                html: post.message.replace(/[\n\r]/g, "<br>") 
+                                }
                             )
+                        )
                         .append(
                             $("<p />", {text: post.to.data[0].name})
                             )
